@@ -3,10 +3,15 @@ export function Greeting({ title, name = "user" }) {
   return <h1>{`${title} ${name}`}</h1>;
 }
 
-export function UserCard(props) {
+export function UserCard({name, amount, married, address, greet}) {
+  console.log(name, amount, married, address)
   return <div>
-    <h1>{props.name}</h1>
-    <p>${props.amount}</p>
-    <p>{props.married ? 'married' : 'single'}</p>
+    <h1>{name}</h1>
+    <p>${amount}</p>
+    <p>{married ? 'married' : 'single'}</p>
+    <ul>
+      <li>City: {address.city}</li>
+      <li>Address: {address.street}</li>
+    </ul>
   </div>;
 }
